@@ -15,6 +15,7 @@
       const vm = this;
 
       vm.$onInit = onInit;
+      vm.submitNewPost = submitNewPost;
       vm.classifieds = [];
 
       function onInit(){
@@ -25,6 +26,17 @@
             vm.classifieds = results.data;
             console.log(results.data);
           });
+      }
+
+      function submitNewPost (title, description, price, item_image) {
+        var post = {title: title, description: description, price: price, item_image: item_image};
+
+        console.log(post);
+
+        $http.post('/api/classifieds' , post)
+          .then(response => {
+            vm.classifieds.push(post);
+          })
       }
     }
 

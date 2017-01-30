@@ -2,7 +2,7 @@
 
 <!--POST FORM-->
 <section>
-  <form name = "$ctrl.newPostForm">
+  <form name = "$ctrl.submitNewPost()" ng-submit = "$ctrl.submitNewPost($ctrl.post.title, $ctrl.post.description, $ctrl.post.price, $ctrl.post.item_image)">
     <label for = "title">Title</label>
       <input
         id= "title"
@@ -13,13 +13,23 @@
     <label for = "description">Description</label>
       <input
         id = "description"
-        type = "text">
+        type = "text"
+        name = "description"
+        ng-model = "$ctrl.post.description">
 
     <label for = "price">Price</label>
-      <input type = "text">
+      <input
+        id = "price"
+        type = "text"
+        name = "title"
+        ng-model = "$ctrl.post.price">
 
     <label for = "item_image">Item Image</label>
-      <input type = "text">
+      <input
+      id = "item_image"
+      type = "text"
+      name = "item_image"
+      ng-model = "$ctrl.post.item_image">
 
     <button name = "submit">Submit</button>
 
@@ -31,6 +41,6 @@
   <p>Title: {{post.title}} </p>
   <p>Description: {{post.description}}</p>
   <p>Price: {{post.price}} </p>
-  <p>Item Image:{{post.item_image}} </p>
+  <p>Item Image: {{post.item_image}} </p>
   <br>
 </section>
