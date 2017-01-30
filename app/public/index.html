@@ -4,12 +4,15 @@
     <meta charset="utf-8">
     <title>Galvanize Classifieds</title>
 
+    <base href="/">
+
     <!--CSS-->
     <link href = "css/styles.css" rel = "stylesheet">
 
     <!--Angular 1.6-->
-      <!-- <script src="/node_modules/angular/angular.min.js"></script> -->
       <script src="/angular/angular.min.js"></script>
+      <script src="https://unpkg.com/angular-ui-router@1.0.0-beta.3/release/angular-ui-router.js"></script>
+
 
       <script src="/app/app.module.js"></script>
       <script src="/app/app.config.js"></script>
@@ -21,7 +24,8 @@
   <body>
     <h1>Connected!</h1>
 
-    <post-message></post-message>
+    <ui-view></ui-view>
+    <!-- <post-message></post-message> -->
 
   </body>
 

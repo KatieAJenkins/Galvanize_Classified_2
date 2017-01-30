@@ -2,14 +2,16 @@
   'use strict';
 
   angular
-    .module('app' , []) //could this post.component?
+    .module('post.component' , ['ui.router'])
 
     .component('postMessage' , {
       controller: Controller,
       templateUrl: '/posts/post.template.html'
     });
 
-    function Controller() {
+    Controller.$inject = ['$http'];
+
+    function Controller($http) {
       const vm = this;
 
       vm.$onInit = onInit;
