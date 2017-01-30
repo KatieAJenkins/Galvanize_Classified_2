@@ -15,10 +15,16 @@
       const vm = this;
 
       vm.$onInit = onInit;
+      vm.classifieds = [];
 
       function onInit(){
-        //write code to get all messages on page load here
-        console.log("we made it to onInit");
+        // console.log("we made it to onInit");
+        $http.get('/api/classifieds')
+
+          .then(results => {
+            // vm.classifieds = results.data;
+            console.log(results);
+          });
       }
     }
 
