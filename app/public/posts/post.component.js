@@ -36,6 +36,7 @@
         $http.post('/api/classifieds' , post)
           .then(response => {
             vm.classifieds.push(post);
+            delete vm.post;
           })
       }
     }
