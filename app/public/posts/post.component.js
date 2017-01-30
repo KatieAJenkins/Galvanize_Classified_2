@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('post.component' , [])
+    .module('app' , []) //could this post.component?
 
     .component('postMessage' , {
       controller: Controller,
@@ -16,6 +16,7 @@
 
       function onInit(){
         //write code to get all messages on page load here
+        console.log("we made it to onInit");
       }
     }
 
