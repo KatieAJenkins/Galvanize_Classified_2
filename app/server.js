@@ -7,10 +7,10 @@ const path = require('path');
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-app.use(express.static(path.join(__dirname,'app/public')));
+app.use(express.static(path.join(__dirname,'public')));
 app.use(express.static(path.join(__dirname, '/../', 'node_modules')));
 
-const messages = require('./app/routes/classifieds');
+const messages = require('./routes/classifieds');
 
 app.use('/classifieds',messages);
 
