@@ -11,5 +11,12 @@
 
     function Controller() {
       const vm = this;
+
+      vm.$onInit = onInit;
+
+      function onInit(){
+        //write code to get all messages on page load here
+      }
     }
+
 }());
