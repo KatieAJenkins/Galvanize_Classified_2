@@ -6,7 +6,7 @@ const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-const messages = require('./routes/classifieds');
+const messages = require('./app/routes/classifieds');
 
 app.use('/classifieds',messages);
 
