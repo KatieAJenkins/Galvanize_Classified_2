@@ -1,5 +1,13 @@
 <!-- <h1>Post Template</h1> -->
 
+<!--SHOW POSTS-->
+<section ng-repeat = "post in $ctrl.classifieds">
+{{post.title}}
+{{post.description}}
+{{post.price}}
+{{post.item_image}}
+</section>
+
 <!--POST FORM-->
 <section>
   <form name = "$ctrl.newPostForm">

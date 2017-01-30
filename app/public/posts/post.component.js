@@ -22,8 +22,8 @@
         $http.get('/api/classifieds')
 
           .then(results => {
-            // vm.classifieds = results.data;
-            console.log(results);
+            vm.classifieds = results.data;
+            console.log(results.data);
           });
       }
     }
