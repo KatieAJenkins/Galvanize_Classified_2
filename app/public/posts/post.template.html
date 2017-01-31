@@ -1,5 +1,15 @@
 <!-- <h1>Post Template</h1> -->
 
+<!--FILTER POSTS-->
+<section>
+<h3>Filter By:</h3>
+  <label for = "titleFilter"></label>
+  <input type = "search" ng-model="$ctrl.searchBy" placeholder = "title">
+
+  <!-- <button type = "submit">Descriptions</button> -->
+</section>
+<br>
+
 <!--NEW POST FORM-->
 <section>
   <form name = "$ctrl.submitNewPost()" ng-submit = "$ctrl.submitNewPost($ctrl.post.title, $ctrl.post.description, $ctrl.post.price, $ctrl.post.item_image)">
@@ -37,7 +47,7 @@
 </section>
 
 <!--SHOW POSTS-->
-<section ng-repeat = "post in $ctrl.classifieds">
+<section ng-repeat = "post in $ctrl.classifieds | filter:$ctrl.searchBy">
   <h3>Title: {{post.title}} </h3>
   <a ui-sref = "updatePost({id: post.id})">{{post.description}}</a>
 

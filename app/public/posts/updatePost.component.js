@@ -9,7 +9,7 @@
         templateUrl: '/posts/updatePost.template.html'
       });
 
-      Controller.$inject = ['$http', '$stateParams', "$state"];
+      Controller.$inject = ['$http', '$stateParams', '$state', '$location'];
 
       function Controller($http, $stateParams, $state) {
         const vm = this;
@@ -33,17 +33,25 @@
 
       function updatePost() {
         // console.log(post);
-        $http.patch (`/api/classifieds/${$stateParams.id}` , vm.post)
+        $http.patch (`/api/classifieds/${$stateParams.id}` , vm.post);
         console.log("patch post", vm.post)
 
-          // .then(response => {
-          //   $state.go('/');
+          // .then(results => {
+          //   console.log(results);
+            // $state.href('/');
+            $state.go('/classifieds')
+            // $location.path('/');
           // });
       }
 
       function deletePost() {
-        $http.delete (`/api/classifieds/${$stateParams.id}` , vm.post)
-        console.log("deleting post ", vm.post);
+        $http.delete (`/api/classifieds/${$stateParams.id}` , vm.post);
+        console.log("deleting post ", vm.post)
+          //
+          // .then (results => {
+          //   console.log(results);
+            $state.href('/');
+          // });
       }
     }
 }());
