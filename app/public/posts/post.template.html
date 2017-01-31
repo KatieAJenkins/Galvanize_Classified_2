@@ -8,8 +8,14 @@
 
   <label for = "descriptionFilter"></label>
   <input type = "search" ng-model="$ctrl.searchByDesc" placeholder = "description">
+</section>
+<br>
 
-  <!-- <button type = "submit">Descriptions</button> -->
+<!--SORT BY-->
+<section>
+  <h3>Sort By</h3>
+    <button ng-click ="$ctrl.setPropertyName ('date')">Date</button>
+    <button ng-click ="$ctrl.setPropertyName ('price')">Price</button>
 </section>
 <br>
 
@@ -50,7 +56,7 @@
 </section>
 
 <!--SHOW POSTS-->
-<section ng-repeat = "post in $ctrl.classifieds | filter:$ctrl.searchByTitle | filter:$ctrl.searchByDesc">
+<section ng-repeat = "post in $ctrl.classifieds | filter:$ctrl.searchByTitle | filter:$ctrl.searchByDesc | orderBy:$ctrl.sort">
   <h3>Title: {{post.title}} </h3>
   <a ui-sref = "updatePost({id: post.id})">{{post.description}}</a>
 

@@ -16,6 +16,7 @@
 
       vm.$onInit = onInit;
       vm.submitNewPost = submitNewPost;
+      vm.setPropertyName = setPropertyName;
       vm.classifieds = [];
 
       function onInit(){
@@ -38,6 +39,10 @@
             vm.classifieds.push(post);
             delete vm.post;
           })
+      }
+
+      function setPropertyName(property){
+        vm.sort = property;
       }
     }
 

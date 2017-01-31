@@ -19,10 +19,8 @@
         vm.updatePost = updatePost;
         vm.deletePost = deletePost;
 
-
       function onInit(){
         // console.log("connected to update Post component");
-        // $http.get('/api/classifieds')
         $http.get(`/api/classifieds/${$stateParams.id}`)
         // console.log("stateParam = " , `${$stateParams.id}`)
           .then(results => {

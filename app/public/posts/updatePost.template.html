@@ -1,11 +1,8 @@
 <!--SHOW POSTS-->
-<section ng-repeat = "post in $ctrl.classifieds">
+<!-- <section ng-repeat = "post in $ctrl.classifieds">
   <h2>Title: {{post.title}} </h2>
-  <!-- <p>Description: {{post.description}}</p>
-  <p>Price: {{post.price}} </p>
-  <img ng-src ="{{post.item_image}}">Item Image: {{post.item_image}} -->
   <br>
-</section>
+</section> -->
 
 <!--EDIT POST-->
 <section>
@@ -18,11 +15,11 @@
       ng-model = "$ctrl.post.title">
 
       <label for ="description">Description</label>
-      <input
+      <textarea
         id = "updateDescription"
         type = "text"
         name = "description"
-        ng-model = "$ctrl.post.description">
+        ng-model = "$ctrl.post.description"></textarea>
 
       <label for ="price">Price</label>
       <input
