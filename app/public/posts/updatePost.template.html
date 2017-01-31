@@ -1,8 +1,42 @@
 <!--SHOW POSTS-->
 <section ng-repeat = "post in $ctrl.classifieds">
-  <p>Title: {{post.title}} </p>
-  <p>Description: {{post.description}}</p>
+  <h2>Title: {{post.title}} </p>
+  <!-- <p>Description: {{post.description}}</p>
   <p>Price: {{post.price}} </p>
-  <img ng-src ="{{post.item_image}}">Item Image: {{post.item_image}}
+  <img ng-src ="{{post.item_image}}">Item Image: {{post.item_image}} -->
   <br>
 </section>
+
+<!--EDIT POST-->
+<section>
+  <form>
+    <label for ="title">Title</label>
+    <input
+      id = "updateTitle"
+      type = "text"
+      name = "title"
+      ng-model = "$ctrl.post.title">
+
+      <label for ="description">Description</label>
+      <input
+        id = "updateDescription"
+        type = "text"
+        name = "description"
+        ng-model = "$ctrl.post.description">
+
+      <label for ="price">Price</label>
+      <input
+        id = "updatePrice"
+        type = "text"
+        name = "price"
+        ng-model = "$ctrl.post.price">
+
+      <label for ="item_image">Item Image</label>
+      <input
+        id = "updateImage"
+        type = "text"
+        name = "item_image"
+        ng-model = "$ctrl.post.item_image">
+
+      <button type = "submit">Update Post</button>
+  </form>
