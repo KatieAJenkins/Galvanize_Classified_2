@@ -17,6 +17,7 @@
         vm.$onInit = onInit;
         vm.classifieds = [];
         vm.updatePost = updatePost;
+        vm.deletePost = deletePost;
 
 
       function onInit(){
@@ -38,6 +39,11 @@
           // .then(response => {
           //   $state.go('/');
           // });
+      }
+
+      function deletePost() {
+        $http.delete (`/api/classifieds/${$stateParams.id}` , vm.post)
+        console.log("deleting post ", vm.post);
       }
     }
 }());
