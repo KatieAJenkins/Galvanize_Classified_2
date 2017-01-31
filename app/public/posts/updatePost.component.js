@@ -16,6 +16,7 @@
 
         vm.$onInit = onInit;
         vm.classifieds = [];
+        vm.updatePost = updatePost;
 
 
       function onInit(){
@@ -26,6 +27,11 @@
             vm.classifieds = results.data;
             console.log(results.data);
           });
+      }
+
+      function updatePost(title, description, price, item_image){
+        var updatedPost = {title: title, description: description, price: price, item_image: item_image};
+        console.log(updatedPost);
       }
     }
 }());

@@ -1,6 +1,6 @@
 <!--SHOW POSTS-->
 <section ng-repeat = "post in $ctrl.classifieds">
-  <h2>Title: {{post.title}} </p>
+  <h2>Title: {{post.title}} </h2>
   <!-- <p>Description: {{post.description}}</p>
   <p>Price: {{post.price}} </p>
   <img ng-src ="{{post.item_image}}">Item Image: {{post.item_image}} -->
@@ -9,7 +9,7 @@
 
 <!--EDIT POST-->
 <section>
-  <form>
+  <form name = "$ctrl.updatePost()" ng-submit = "$ctrl.updatePost($ctrl.post.title, $ctrl.post.description, $ctrl.post.price, $ctrl.post.item_image)">
     <label for ="title">Title</label>
     <input
       id = "updateTitle"
