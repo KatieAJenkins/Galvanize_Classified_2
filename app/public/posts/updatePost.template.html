@@ -1,0 +1,8 @@
+<!--SHOW POSTS-->
+<section ng-repeat = "post in $ctrl.classifieds">
+  <p>Title: {{post.title}} </p>
+  <p>Description: {{post.description}}</p>
+  <p>Price: {{post.price}} </p>
+  <img ng-src ="{{post.item_image}}">Item Image: {{post.item_image}}
+  <br>
+</section>

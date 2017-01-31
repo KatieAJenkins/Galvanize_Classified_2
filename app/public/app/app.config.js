@@ -3,7 +3,7 @@
 // console.log('app.config connected!');
 
  angular
-  .module('app', ['ui.router', 'post.component'])
+  .module('app', ['ui.router', 'post.component' ,'updatePost.component'])
   .config(config)
 
   config.$inject = ['$stateProvider' , '$urlRouterProvider', '$locationProvider'];
@@ -17,7 +17,11 @@
       name: 'post',
       url: '/',
       component: 'postMessage',
+    })
+    .state({
+      name: 'updatePost',
+      url: '/:id',
+      component: 'updatePost'
     });
   }
-
 }());

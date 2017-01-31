@@ -24,7 +24,7 @@
 
           .then(results => {
             vm.classifieds = results.data;
-            console.log(results.data);
+            // console.log(results.data);
           });
       }
 
