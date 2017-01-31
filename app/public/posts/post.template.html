@@ -38,7 +38,9 @@
 
 <!--SHOW POSTS-->
 <section ng-repeat = "post in $ctrl.classifieds">
-  <p>Title: {{post.title}} </p>
+  <h3>Title: {{post.title}} </h3>
+  <a ui-sref = "updatePost({id: post.id})">{{post.description}}</a>
+
   <p>Description: {{post.description}}</p>
   <p>Price: {{post.price}} </p>
   <img ng-src ="{{post.item_image}}">Item Image: {{post.item_image}}
