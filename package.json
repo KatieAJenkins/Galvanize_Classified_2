@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "engines": {
     "node": "7.1.0"
-  }
+  },
   "main": "./app/server.js",
   "license": "MIT",
   "scripts": {
