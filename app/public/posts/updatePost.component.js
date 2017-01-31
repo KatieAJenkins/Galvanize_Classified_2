@@ -21,17 +21,23 @@
 
       function onInit(){
         // console.log("connected to update Post component");
-        $http.get('/api/classifieds')
-
+        // $http.get('/api/classifieds')
+        $http.get(`/api/classifieds/${$stateParams.id}`)
+        // console.log("stateParam = " , `${$stateParams.id}`)
           .then(results => {
-            vm.classifieds = results.data;
-            console.log(results.data);
+            vm.post = results.data;
+            console.log(vm.post);
           });
       }
 
-      function updatePost(title, description, price, item_image){
-        var updatedPost = {title: title, description: description, price: price, item_image: item_image};
-        console.log(updatedPost);
+      function updatePost() {
+        // console.log(post);
+        $http.patch (`/api/classifieds/${$stateParams.id}` , vm.post)
+        console.log("patch post", vm.post)
+
+          // .then(response => {
+          //   $state.go('/');
+          // });
       }
     }
 }());
