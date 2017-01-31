@@ -4,11 +4,11 @@
   "engines": {
     "node": "7.1.0"
   },
-  "main": "server.js",
+  "main": "./app/server.js",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js",
-    "test": "mocha"
+    "start": "node /./app/server.js",
+    "test": "mocha",
   },
   "keywords": [],
   "author": "",
