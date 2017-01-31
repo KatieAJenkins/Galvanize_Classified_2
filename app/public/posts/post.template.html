@@ -4,7 +4,10 @@
 <section>
 <h3>Filter By:</h3>
   <label for = "titleFilter"></label>
-  <input type = "search" ng-model="$ctrl.searchBy" placeholder = "title">
+  <input type = "search" ng-model="$ctrl.searchByTitle" placeholder = "title">
+
+  <label for = "descriptionFilter"></label>
+  <input type = "search" ng-model="$ctrl.searchByDesc" placeholder = "description">
 
   <!-- <button type = "submit">Descriptions</button> -->
 </section>
@@ -47,7 +50,7 @@
 </section>
 
 <!--SHOW POSTS-->
-<section ng-repeat = "post in $ctrl.classifieds | filter:$ctrl.searchBy">
+<section ng-repeat = "post in $ctrl.classifieds | filter:$ctrl.searchByTitle | filter:$ctrl.searchByDesc">
   <h3>Title: {{post.title}} </h3>
   <a ui-sref = "updatePost({id: post.id})">{{post.description}}</a>
 
