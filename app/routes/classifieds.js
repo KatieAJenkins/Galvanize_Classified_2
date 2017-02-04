@@ -46,7 +46,7 @@ router.post('/' , (req, res, next) => {
 
   knex('classifieds')
     .insert({title:title, description:description, price:price , item_image:item_image})
-    .returning(['id', 'title' , 'description', 'price' , 'item_image'])
+    .returning(['id', 'title' , 'description', 'price' , 'item_image' , 'updated_at'])
 
   .then((results) => {
     res.send(results[0]);
