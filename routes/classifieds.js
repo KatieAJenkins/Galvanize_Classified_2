@@ -68,12 +68,11 @@ router.patch('/:id' , (req, res, next) => {
   knex('classifieds')
     .update({title, description, price, item_image})
     .where('id' , id)
-    .returning(['id' , 'title' , 'description', 'price' , 'item_image'])
+    .returning(['id' , 'title' , 'description', 'price' , 'item_image', 'updated_at'])
 
   .then((results) => {
     res.send(results[0]);
-    console.log(results);
-    console.log(results[0]);
+    // console.log(results);
   })
   .catch((err) => {
     next(err);
