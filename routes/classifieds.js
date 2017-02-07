@@ -72,6 +72,8 @@ router.patch('/:id' , (req, res, next) => {
 
   .then((results) => {
     res.send(results[0]);
+    console.log(results);
+    console.log(results[0]);
   })
   .catch((err) => {
     next(err);
