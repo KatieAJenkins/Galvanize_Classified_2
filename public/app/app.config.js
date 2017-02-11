@@ -13,18 +13,8 @@
   $locationProvider.html5Mode(true);
 
   $stateProvider
-    .state ({
-      name: 'app',
-      abstract: true,
-      component: 'app'
-    })
     .state({
-      name: 'home',
-      url: '/',
-      component: 'postMessage',
-    })
-    .state({
-      name: 'post',
+      name: 'postMessage',
       url: '/',
       component: 'postMessage',
     })

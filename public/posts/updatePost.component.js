@@ -29,16 +29,12 @@
           });
       }
 
-      function updatePost() {
-        // console.log(post);
+      function updatePost(event) {
+        event.preventDefault();
         $http.patch (`/api/classifieds/${$stateParams.id}` , vm.post);
-        console.log("patch post", vm.post)
-
-          // .then(results => {
-          //   console.log(results);
-            // $state.href('/');
-            $state.go('/classifieds')
-            // $location.path('/');
+        // console.log("patch post", vm.post)
+          // .then(response => {
+            $state.go('/');
           // });
       }
 
@@ -48,7 +44,7 @@
           //
           // .then (results => {
           //   console.log(results);
-            $state.href('/');
+            $state.go('/');
           // });
       }
     }
